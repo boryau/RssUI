@@ -54,7 +54,7 @@ export default {
 
   methods: {
     getRssFeedChannels: function () {
-      this.$http.get('http://localhost:8080/rss/getAllChannels')
+      this.$http.get('http://localhost:9090/rss/getAllChannels')
         .then(response => {
           for (var key in response.body) {
             this.options.push(response.body[key])
@@ -63,7 +63,7 @@ export default {
         })
     },
     getFeeds: function () {
-      this.$http.get('http://localhost:8080/rss/getRssFeeds?rssName=' + this.selected)
+      this.$http.get('http://localhost:9090/rss/getRssFeeds?rssName=' + this.selected)
         .then(response => {
           this.feedList = []
           this.feed.author = ''
